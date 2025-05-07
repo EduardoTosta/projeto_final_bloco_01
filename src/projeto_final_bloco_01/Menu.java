@@ -42,8 +42,7 @@ public class Menu {
 	    System.out.print(Cores.TEXT_YELLOW_BOLD);
 	    System.out.println("║   ╔═══════════════════════════════════╗   ║");
 	    System.out.println("║   ║                                   ║   ║");
-	    System.out.println("║   ║   1 - Acessar conta               ║   ║");
-	    System.out.println("║   ║   2 - Criar conta                 ║   ║");
+	    System.out.println("║   ║   1 - Acessar Estoque             ║   ║");
 	    System.out.println("║   ║   0 - Encerrar                    ║   ║");
 	    System.out.println("║   ║                                   ║   ║");
 	    System.out.println("║   ╚═══════════════════════════════════╝   ║");
@@ -70,8 +69,7 @@ public class Menu {
 	    System.out.println("║   ║   1 - Comprar                                              ║   ║");
 	    System.out.println("║   ║   2 - Vender                                               ║   ║");
 	    System.out.println("║   ║   4 - Produtos                                             ║   ║");
-	    System.out.println("║   ║   4 - Atualizar Dados da Conta                             ║   ║");
-	    System.out.println("║   ║   7 - Voltar                                               ║   ║");
+	    System.out.println("║   ║   5 - Voltar                                               ║   ║");
 	    System.out.println("║   ║   0 - Sair                                                 ║   ║");
 	    System.out.println("║   ║                                                            ║   ║");
 	    System.out.println("║   ╚════════════════════════════════════════════════════════════╝   ║");
