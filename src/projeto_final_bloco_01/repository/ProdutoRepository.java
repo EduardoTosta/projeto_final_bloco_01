@@ -12,6 +12,6 @@ public interface  ProdutoRepository {
 		public void listarPorTipo(int tipo);
 		
 		//Métodos de produto
-		public void comprar(int numero, double valor);
-		public void vender(int numero, double valor);
+		public void comprar(int numero, int quantidade);
+		public void vender(int numero, int quantidade);
 }

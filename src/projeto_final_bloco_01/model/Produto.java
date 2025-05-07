@@ -21,6 +21,19 @@ public abstract class Produto {
 		this.nome = nome;
 	}
 	
+	//Metodos de Produto
+	public void comprar(int quantidade) {
+	    this.qntEstoque += quantidade;
+	}
+
+	public boolean vender(int quantidade) {
+	    if (this.qntEstoque >= quantidade) {
+	        this.qntEstoque -= quantidade;
+	        return true;
+	    }
+	    return false;
+	}
+
 	
 	//Metodos de impressão
 	public void vizualizar() {

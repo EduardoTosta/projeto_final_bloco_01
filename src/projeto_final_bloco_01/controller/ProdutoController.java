@@ -3,6 +3,7 @@ package projeto_final_bloco_01.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import projeto_final_bloco_01.model.Produto;
 import projeto_final_bloco_01.repository.ProdutoRepository;
@@ -36,49 +37,76 @@ public class ProdutoController implements ProdutoRepository{
 
 	@Override
 	public void cadastrar(Produto produto) {
-		// TODO Auto-generated method stub
-		
+		listaProdutos.add(produto);
+		System.out.println("A Conta foi criada com sucesso!");
 	}
 
 	@Override
 	public void atualizar(Produto produto) {
-		// TODO Auto-generated method stub
-		
+	    Optional<Produto> busca = buscarNaCollection(produto.getNumero());
+
+	    if (busca.isPresent()) {
+	        int index = listaProdutos.indexOf(busca.get());
+	        listaProdutos.set(index, produto);
+	        System.out.println("Produto atualizado com sucesso!");
+	    } else {
+	        System.out.println("Produto não encontrado.");
+	    }
 	}
+
 
 	@Override
 	public void deletar(int numero) {
-		// TODO Auto-generated method stub
+		var produto = buscarNaCollection(numero);
 		
+		if(produto.isPresent()) {
+			listaProdutos.remove(produto.get());
+			System.out.println("Produto removido com sucesso");
+		}else
+			System.out.println("O produto não foi encontrado");	
 	}
 
 	@Override
 	public void listarPorTipo(int tipo) {
 		List<Produto> listaTipo = listaProdutos.stream()
-				.filter(p -> p.getTipo())
+				.filter(p -> p.getTipo() == tipo)
 				.collect(Collectors.toList());
 		
 		if(listaTipo.isEmpty())
+			System.out.printf("\nNenhum produto foi encontrado com base no critério %d\n", tipo);
 		
-			System.out.printf("\nNenhuma conta foi encontrada com base no criterio %s" + tipo);
-		
-		for(var conta:listaTipo)
+		for(var produto:listaTipo)
 			produto.vizualizar();
 	}
 	
 
 	//Metodos Produto
 	@Override
-	public void comprar(int numero, double valor) {
-		// TODO Auto-generated method stub
-		
+	public void comprar(int numero, int quantidade) {
+	    Optional<Produto> produto = buscarNaCollection(numero);
+	    if (produto.isPresent()) {
+	        produto.get().comprar(quantidade); // ou setQuantidadeAtual
+	        System.out.println("Compra realizada com sucesso!");
+	    } else {
+	        System.out.println("Produto não encontrado para compra.");
+	    }
 	}
 
 	@Override
-	public void vender(int numero, double valor) {
-		// TODO Auto-generated method stub
-		
+	public void vender(int numero, int quantidade) {
+	    Optional<Produto> produto = buscarNaCollection(numero);
+	    if (produto.isPresent()) {
+	        if (produto.get().getQntEstoque() >= quantidade) {
+	            produto.get().vender(quantidade); // ou setQuantidadeAtual
+	            System.out.println("Venda realizada com sucesso!");
+	        } else {
+	            System.out.println("Estoque insuficiente para a venda.");
+	        }
+	    } else {
+	        System.out.println("Produto não encontrado para venda.");
+	    }
 	}
+
 	
 	//Metodos auxiliares
 	public Optional <Produto> buscarNaCollection(int numero) {

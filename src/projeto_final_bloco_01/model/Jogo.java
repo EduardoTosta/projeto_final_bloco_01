@@ -3,9 +3,9 @@ package projeto_final_bloco_01.model;
 public class Jogo extends Produto{
 	private String produtora;
 	
-	public Jogo(int numero, int tipo, int qntEstoque, double preco, String nome, String marca) {
+	public Jogo(int numero, int tipo, int qntEstoque, double preco, String nome, String produtora) {
 		super(numero, tipo, qntEstoque, preco, nome);
-		this.produtora = marca;
+		this.produtora = produtora;
 	}
 
 
@@ -17,12 +17,12 @@ public class Jogo extends Produto{
 	
 	
 	//Getter e Setter
-	public String getMarca() {
-		return produtora;
+	public String getProdutora() {
+	    return produtora;
 	}
 
-	public void setMarca(String marca) {
-		this.produtora = marca;
+	public void setProdutora(String produtora) {
+	    this.produtora = produtora;
 	}
 
 }
