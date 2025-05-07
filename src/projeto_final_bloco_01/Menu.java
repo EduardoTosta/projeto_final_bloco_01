@@ -113,6 +113,43 @@ public class Menu {
                                 keyPress();
                                 break;
                                 
+                            case 6:
+                                System.out.println("Cadastrar Produto");
+                                System.out.print("Digite o codigo do produto: ");
+                                codigo = leia.nextInt();
+
+                                System.out.print("Digite o nome: ");
+                                leia.skip("\\R");
+                                nome = leia.nextLine();
+
+                                System.out.print("Digite o tipo do produto: ");
+                                tipo = leia.nextInt();
+
+                                System.out.print("Digite a quantidade em estoque: ");
+                                qntEstoque = leia.nextInt();
+
+                                System.out.print("Digite o valor do Produto: ");
+                                preco = leia.nextDouble();
+
+                                switch (tipo) {
+                                    case 1 -> {
+                                        System.out.print("Digite a marca do Console: ");
+                                        leia.skip("\\R");
+                                        marca = leia.nextLine();
+                                        produtoController.cadastrar(new Console(codigo, tipo, qntEstoque, preco, nome, marca));
+                                    }
+                                    case 2 -> {
+                                        System.out.print("Digite a produtora do Jogo: ");
+                                        leia.skip("\\R");
+                                        produtora = leia.nextLine();
+                                        produtoController.cadastrar(new Jogo(codigo, tipo, qntEstoque, preco,nome, produtora));
+                                    }
+                                }
+                                
+                                controleMenuPrincipal = false;
+                                keyPress();
+                                break;
+                                
                             case 5:
                                 System.out.println("VOLTANDO AO MENU ANTERIOR...");
                                 controleMenuPrincipal = false;
