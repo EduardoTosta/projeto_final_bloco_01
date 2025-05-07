@@ -214,7 +214,8 @@ public class Menu {
         System.out.println("║   ║   2 - Vender                                               ║   ║");
         System.out.println("║   ║   3 - Atualizar Produtos                                   ║   ║");
         System.out.println("║   ║   4 - Listar Produtos                                      ║   ║");
-        System.out.println("║   ║   5 - Voltar                                               ║   ║");
+        System.out.println("║   ║   5 - cadastrar                                            ║   ║");
+        System.out.println("║   ║   6 - Voltar                                               ║   ║");
         System.out.println("║   ║   0 - Sair                                                 ║   ║");
         System.out.println("║   ╚════════════════════════════════════════════════════════════╝   ║");
         System.out.print(Cores.TEXT_GREEN_BOLD);
