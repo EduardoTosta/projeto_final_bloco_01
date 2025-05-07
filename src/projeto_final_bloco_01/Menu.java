@@ -112,7 +112,12 @@ public class Menu {
                                 controleMenuPrincipal = false;
                                 keyPress();
                                 break;
-                                
+ 
+                            case 5:
+                                System.out.println("VOLTANDO AO MENU ANTERIOR...");
+                                controleMenuPrincipal = false;
+                                keyPress();
+                                break;
                             case 6:
                                 System.out.println("Cadastrar Produto");
                                 System.out.print("Digite o codigo do produto: ");
@@ -146,12 +151,6 @@ public class Menu {
                                     }
                                 }
                                 
-                                controleMenuPrincipal = false;
-                                keyPress();
-                                break;
-                                
-                            case 5:
-                                System.out.println("VOLTANDO AO MENU ANTERIOR...");
                                 controleMenuPrincipal = false;
                                 keyPress();
                                 break;
