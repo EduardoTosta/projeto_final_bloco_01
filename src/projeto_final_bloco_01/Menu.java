@@ -14,6 +14,19 @@ public class Menu {
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
         ProdutoController produtoController = new ProdutoController();
+        // Objetos Console
+        Console console1 = new Console(1, 1, 10, 2499.90, "PlayStation 5", "Sony");
+        Console console2 = new Console(2, 1, 5, 2299.00, "Xbox Series S", "Microsoft");
+        // Objetos Jogo
+        Jogo jogo1 = new Jogo(3, 2, 20, 299.90, "God of War Ragnarok", "Santa Monica Studio");
+        Jogo jogo2 = new Jogo(4, 2, 15, 249.90, "Halo Infinite", "343 Industries");
+
+        
+        produtoController.cadastrar(console1);
+        produtoController.cadastrar(console2);
+        produtoController.cadastrar(jogo1);
+        produtoController.cadastrar(jogo2);
+
 
         int opcao, numero, codigo, tipo, qntEstoque,quantidade;
         String nome, marca, produtora;
