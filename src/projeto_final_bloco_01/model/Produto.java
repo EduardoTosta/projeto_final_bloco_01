@@ -46,7 +46,7 @@ public abstract class Produto {
 			case 2 -> tipo = "Jogo";
 			default -> tipo = "Inválido";
 		}
-		System.out.println("**************************************************");
+		System.out.println("\n**************************************************");
 		System.out.println("                 DADOS DO PRODUTO                 ");
 		System.out.println("**************************************************");
 		System.out.println("Codigo do Produto:      " + this.numero);
